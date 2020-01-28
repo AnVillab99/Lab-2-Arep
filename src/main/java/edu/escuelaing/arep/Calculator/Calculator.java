@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 
 /**
@@ -17,21 +19,27 @@ public class Calculator {
     
     
     
-    public static String[] Calcular(String[] req) throws Exception {
-        LinkedList<Double> l1 = makeTest("cases\\test1.txt");
+    public static String Calcular(String req) throws Exception {
         
-        LinkedList<Double> l2 = makeTest("cases\\test2.txt");
+        LinkedList<Double> l1 = new LinkedList<Double>();
+        List<String> ls = Arrays.asList(req.split(","));
+        for(String s:ls){           
+            l1.add(Double.parseDouble(s));
+        }       
         NumberFormat format = new DecimalFormat("#0.000");    
         Iterator<Double> it1 = l1.iterator();
-        Iterator<Double> it2 = l2.iterator();
+
         Double m1=mean(l1,it1);
-        Double m2= mean(l2,it2);
-        System.out.println("Mean Test 1: " + format.format(m1));        
-        System.out.println("Standard Deviation Test 1: " + format.format(stdDev(l1,it1,m1)));
-        System.out.println("Mean Test 2: " + format.format(m2));
-        System.out.println("Standard Deviation Test 2: " + format.format(stdDev(l2,it2,m2)));
-        String[] a =new String[1];
-        a[0]={m1.toString(),format.format(stdDev(l1,it1,m1)).toString()};
+        String[] a =new String[2];
+        
+        a[0]=m1.toString();
+        
+        String st =format.format(stdDev(l1,it1,m1)).toString();
+        a[1]=st;
+        String res ="{mean:"+m1+",std:"+st+"}";
+
+
+        return res;
 
 
     }
@@ -90,9 +98,11 @@ public class Calculator {
     public static Double stdDev(LinkedList<Double> l, Iterator<Double> it, Double m) {
         
         Double suma = 0.0;     
+
         it=l.iterator();   
         int ls = l.size();
         while (ls>=1){
+
             double a =it.next();
             a-=m;        
             suma += a * a;
