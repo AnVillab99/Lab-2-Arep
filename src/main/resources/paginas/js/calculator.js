@@ -9,16 +9,16 @@ calculator = (function () {
         },
 
         ponerDatos: function (datos) {
-            $("#mean").empty();
-            $("#std").empty();
-            var mean = "mean: " +datos.mean;
-            var std = "std:"+datos.std;
-            $("#mean").append(mean);
-            $("#std").append(std);
-
-            var table = document.getElementById("nums");
-            var aMeter  ;
-            document.getElementById("nums").append
+            console.log(datos)           
+            console.log(datos.mean)
+            
+            let std = datos.std
+            $("#resultados").find("#resultsBody").append(
+                "<tr><td>" + JSON.stringify(datos.mean) + "</td><td>" + JSON.stringify(datos.std) + "</td></tr>")
+        
+            
+            // var dataJson = JSON.parse(data);
+            
         },
 
         obtenerDatos: function () {           
@@ -34,17 +34,17 @@ calculadora = (function () {
     return {      
         getResultadosR: function (url,datas, callback) {
 
-        console.log("pre "+datas);
-        console.log("pre "+JSON.stringify(datas));
+        
 
         $.ajax({
             url: url,
             data: datas,
             type: 'POST',
-            dataType: 'json',
-            //contentType: 'application/json',
+            //dataType: 'json',
+            contentType: 'application/json',
             
             success: function(data){
+                console.log(data)
                 callback(data);
             },
             error: function(data){
