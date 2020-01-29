@@ -13,7 +13,7 @@ public class SparkWebApp {
         
         staticFiles.location("/paginas");
         Gson gson = new Gson();
-        port(getPort());
+        //port(getPort());
         get("/calculator", (request, response) -> {
             response.redirect("/index.html");
             response.status(200);
