@@ -22,13 +22,14 @@ public class SparkWebApp {
 
 
         post("/calculator/calcular/", (req, res) -> {
-            System.out.println("sdfdsfdsfdsfsd"+req.contentLength());
-            System.out.println("aaaaaaaaaaaaaad "+req.body());
-            res.type("application/json");
-            res.status(201);
-			return Calculator.Calcular(req.body());
+            //res.type("application/json");
+            //res.status(201);
             
-        }, gson ::toJson);
+            String calculado = Calculator.Calcular(req.body());
+            System.out.println(calculado);
+			return gson.toJson(calculado);
+            
+        });
         }
 
         static int getPort() {

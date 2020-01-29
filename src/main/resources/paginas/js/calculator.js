@@ -8,13 +8,10 @@ calculator = (function () {
             
         },
 
-        ponerDatos: function (datos) {
-            console.log(datos)           
-            console.log(datos.mean)
-            
-            let std = datos.std
+        ponerDatos: function (datos2) {
+            var dat = JSON.parse(datos2)
             $("#resultados").find("#resultsBody").append(
-                "<tr><td>" + JSON.stringify(datos.mean) + "</td><td>" + JSON.stringify(datos.std) + "</td></tr>")
+                "<tr><td>" + dat.mean + "</td><td>" + dat.std + "</td></tr>")
         
             
             // var dataJson = JSON.parse(data);
@@ -40,7 +37,7 @@ calculadora = (function () {
             url: url,
             data: datas,
             type: 'POST',
-            //dataType: 'json',
+            dataType: 'json',
             contentType: 'application/json',
             
             success: function(data){

@@ -36,7 +36,7 @@ public class Calculator {
         
         String st =format.format(stdDev(l1,it1,m1)).toString();
         a[1]=st;
-        String res ="{mean:"+m1+",std:"+st+"}";
+        String res ="{\"mean\":"+m1+",\"std\":"+st+"}";
 
 
         return res;
