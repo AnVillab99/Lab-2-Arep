@@ -13,7 +13,7 @@ public class SparkWebApp {
         
         staticFiles.location("/paginas");
         Gson gson = new Gson();
-        //port(getPort());
+        port(getPort());
         get("/calculator", (request, response) -> {
             response.redirect("/index.html");
             response.status(200);
@@ -33,12 +33,12 @@ public class SparkWebApp {
         });
         }
 
-        /*static int getPort() {
+        static int getPort() {
         if (System.getenv("PORT") != null) {
         return Integer.parseInt(System.getenv("PORT"));
         }
         return 4567; //returns default port if heroku-port isn't set
-        }*/
+        }
     
 }
 
