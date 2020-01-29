@@ -19,13 +19,7 @@ public class SparkWebApp {
             response.status(200);
             return null;
         });
-        get("frozen-journey-22812.herokuapp.com", (request, response) -> {
-            response.redirect("/index.html");
-            response.status(200);
-            return null;
-        });
-
-     
+        
 
 
         post("/calculator/calcular/", (req, res) -> {
