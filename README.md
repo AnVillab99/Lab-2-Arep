@@ -19,14 +19,18 @@ First you need to install java and jdk.
 Go to java page and download both, install them and add the paths of those folders to the enviroment variables of your pc.
 For maven you download the zip archive from the maven page and unpack it on a specific folder, the you add the path to that folder on the enviroment variables
 For Heroku, you need to go to heroku main page and follow thye download and installation instructions, after that you need to setup the heroku credentials.
+To deploy on local, the Procfile must be changed to:
+>web: java -cp target\classes;target\dependency\* edu.escuelaing.arep.designprimer.SparkWebApp
 
 
 ## Running the program
 
-The main page on local :
+Heroku link: https://boiling-crag-06097.herokuapp.com
+
+The main page  :
 ![test](https://github.com/AnVillab99/Lab-2-Arep/blob/master/resources/img/WebCalculator.png)
 
-The results on local:
+The results :
 ![expected](https://github.com/AnVillab99/Lab-2-Arep/blob/master/resources/img/WebCalculatorLocal.png)
 
 ## Design
