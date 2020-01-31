@@ -24,10 +24,10 @@ For Heroku, you need to go to heroku main page and follow thye download and inst
 ## Running the program
 
 The main page on local :
-![test](https://github.com/AnVillab99/AREP-Lab1/blob/master/resources/img/WebCalculator.png)
+![test](https://github.com/AnVillab99/Lab-2-Arep/blob/master/resources/img/WebCalculator.png)
 
 The results on local:
-![expected](https://github.com/AnVillab99/AREP-Lab1/blob/master/resources/img/WebCalculatorLocal.png)
+![expected](https://github.com/AnVillab99/Lab-2-Arep/blob/master/resources/img/WebCalculatorLocal.png)
 
 ## Design
 
