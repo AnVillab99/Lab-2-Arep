@@ -1,4 +1,5 @@
 get("/calculator", (request, response) -> { return x}
+gson.toJson(x)
 GNU GENERAL PUBLIC LICENSE
 
 Version 3, 29 June 2007
